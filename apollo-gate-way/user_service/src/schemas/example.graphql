@@ -1,0 +1,81 @@
+scalar DateTime
+
+extend type Query {
+    """ Returns all registered users. """
+    getUsers: [User!]
+
+    """ If found, returns the user with the specified id. """
+    getUser(name: String!): User
+}
+
+extend type Mutation {
+    """ Creates a new User. """
+    createUser(userInput: UserCreateInput!) : User!
+}
+
+extend type Subscription {
+    """ Subscribe to all new users. """
+    userAdded: User!
+}
+
+type Address {
+    street_name: String!
+    street_number: String!
+    city: String!
+    zip_code: Int!
+    country: String!
+}
+
+input AddressCreateInput {
+    street_name: String!
+    street_number: String!
+    city: String!
+    zip_code: Int!
+    country: String!
+}
+
+interface User @key(fields: "id") {
+    id: ID!
+    member_since: DateTime!
+    username: String!
+    email: String!
+    address: Address!
+    type: UserType!
+}
+
+""" A user of this platform that is only allowed to buy products. """
+type Consumer implements User @key(fields: "id") {
+    id: ID!
+    member_since: DateTime!
+    username: String!
+    email: String!
+    address: Address!
+    type: UserType!
+    purchases: [Product!]
+}
+
+""" A user of this platform that is allowed to buy and sell products. """
+type Producer implements User @key(fields: "id") {
+    id: ID!
+    member_since: DateTime!
+    username: String!
+    email: String!
+    address: Address!
+    type: UserType!
+}
+
+enum UserType {
+    PRODUCER
+    CONSUMER
+}
+
+input UserCreateInput {
+    username: String!
+    email: String!
+    address: AddressCreateInput!
+    type: UserType!
+}
+
+extend type Product @key(fields: "id") {
+  id: ID! @external
+}

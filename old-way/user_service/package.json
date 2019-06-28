@@ -1,0 +1,24 @@
+{
+  "name": "workshop",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon ./src/app",
+    "lint": "eslint ./src",
+    "sonarScan": "sonar-scanner \\\n  -Dsonar.projectKey=BC-Tooling \\\n  -Dsonar.sources=./src \\\n  -Dsonar.host.url=http://localhost:9000 \\\n-Dsonar.login=34c4079eb05d18d9303756097eb79e8de0c181f3"
+  },
+  "dependencies": {
+    "dotenv": "7.0.0",
+    "express": "~4.16.0",
+    "graphql-voyager": "1.0.0-rc.27",
+    "graphql-yoga": "1.17.4",
+    "merge-graphql-schemas": "1.5.8",
+    "nodemon": "1.17.5",
+    "uniqid": "5.0.3"
+  },
+  "devDependencies": {
+    "eslint": "5.16.0",
+    "eslint-config-airbnb-base": "13.1.0",
+    "eslint-plugin-import": "2.17.3"
+  }
+}

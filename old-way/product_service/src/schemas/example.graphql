@@ -1,0 +1,48 @@
+scalar DateTime
+
+type Query {
+    """ Returns all products. They can be filtered by a producer. """
+    getProducts(producerId: ID, productIds: [ID!]): [Product!]
+
+    getProductsBoughtBy(userId: ID!): [Product!]
+
+    """ Returns the specified product if found. """
+    getProduct(productId: ID!): Product
+}
+
+type Mutation {
+    """ Creates a new Product for a producer. """
+    createProduct(producerId: ID!, productInput: ProductCreateInput!) : Product!
+}
+
+type Subscription {
+    """ Subscribe to all new users. """
+    productAdded(producerId: ID!) : Product!
+}
+
+type Product {
+    id: ID!
+    name: String!
+    unit: Unit!
+    price_per_unit: Float!
+    description: String
+}
+
+input ProductQueryInput {
+    name: String
+    productId: ID
+    producerId: ID
+}
+
+input ProductCreateInput {
+    name: String!
+    unit: Unit!
+    price_per_unit: Float!
+    description: String
+}
+
+enum Unit {
+    QUANTITY
+    LITER
+    KILOGRAM
+}

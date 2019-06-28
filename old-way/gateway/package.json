@@ -1,0 +1,35 @@
+{
+  "name": "workshop",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon ./src/app",
+    "lint": "eslint ./src --fix"
+  },
+  "dependencies": {
+    "apollo-link-http": "1.5.14",
+    "apollo-link-retry": "2.2.13",
+    "apollo-link-ws": "1.0.17",
+    "apollo-utilities": "1.3.2",
+    "dotenv": "7.0.0",
+    "express": "~4.16.0",
+    "graphql": "14.3.1",
+    "graphql-directive-deprecated": "2.0.1",
+    "graphql-tools": "4.0.5",
+    "graphql-voyager": "1.0.0-rc.27",
+    "graphql-yoga": "1.17.4",
+    "install": "0.12.2",
+    "merge-graphql-schemas": "1.5.8",
+    "node-fetch": "2.6.0",
+    "nodemon": "1.17.5",
+    "npm": "6.9.0",
+    "subscriptions-transport-ws": "0.9.16",
+    "uniqid": "5.0.3",
+    "ws": "7.0.0"
+  },
+  "devDependencies": {
+    "eslint": "5.16.0",
+    "eslint-config-airbnb-base": "13.1.0",
+    "eslint-plugin-import": "2.17.3"
+  }
+}

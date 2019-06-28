@@ -1,0 +1,7 @@
+extend type Consumer {
+    purchases: [Product!]
+}
+
+extend type Producer {
+    products: [Product!]
+}

@@ -1,0 +1,51 @@
+extend type Query {
+    """ Returns all products. They can be filtered by a producer. """
+    getProducts(producerId: ID): [Product!]
+
+    getProductsBoughtBy(userId: ID!): [Product!]
+
+    """ Returns the specified product if found. """
+    getProduct(productId: ID!): Product
+}
+
+extend type Mutation {
+    """ Creates a new Product for a producer. """
+    createProduct(producerId: ID!, productInput: ProductCreateInput!) : Product!
+}
+
+extend type Subscription {
+    """ Subscribe to all new users. """
+    productAdded(producerId: ID!) : Product!
+}
+
+type Product @key(fields: "id"){
+    id: ID!
+    name: String!
+    unit: Unit!
+    price_per_unit: Float!
+    description: String
+}
+
+input ProductQueryInput {
+    name: String
+    productId: ID
+    producerId: ID
+}
+
+input ProductCreateInput {
+    name: String!
+    unit: Unit!
+    price_per_unit: Float!
+    description: String
+}
+
+enum Unit {
+    QUANTITY
+    LITER
+    KILOGRAM
+}
+
+extend type Producer @key(fields: "id") {
+  id: ID! @external
+  products: [Product!]
+}

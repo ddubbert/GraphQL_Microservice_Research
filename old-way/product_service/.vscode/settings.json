@@ -1,0 +1,5 @@
+{
+    "npm-intellisense.importLinebreak": "",
+    "npm-intellisense.scanDevDependencies": true,
+    "npm-intellisense.showBuildInLibs": true
+}
