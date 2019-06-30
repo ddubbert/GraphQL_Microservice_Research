@@ -49,6 +49,7 @@ module.exports = {
     __resolveReference(reference) {
       return productDB.getProductById(reference.id)
     },
+    producer: product => ({ id: product.producerId, username: product.producerName }),
   },
   Unit: {
     QUANTITY: Unit.QUANTITY,
@@ -57,8 +58,9 @@ module.exports = {
   },
   Producer: {
     products: (producer) => {
-      const { id } = producer
-      return productDB.getProductsMatchingQuery({ producerId: id })
-    }
-  }
+      const { id, username } = producer
+      const products = productDB.getProductsMatchingQuery({ producerId: id })
+      return products.map(product => ({ ...product, name: `${username}_${product.name}` }))
+    },
+  },
 }

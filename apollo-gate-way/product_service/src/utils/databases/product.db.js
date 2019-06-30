@@ -9,6 +9,7 @@ const products = [
     unit: Unit.QUANTITY,
     price_per_unit: 0.50,
     producerId: 'd467f50a',
+    producerName: 'peter-lustig',
     boughtBy: ['8935b480'],
   },
   {
@@ -18,6 +19,7 @@ const products = [
     unit: Unit.KILOGRAM,
     price_per_unit: 1.99,
     producerId: 'd467f50a',
+    producerName: 'peter-lustig',
     boughtBy: ['8935b480'],
   },
   {
@@ -27,6 +29,7 @@ const products = [
     unit: Unit.QUANTITY,
     price_per_unit: 0.20,
     producerId: 'da8ab4c0',
+    producerName: 'klaus-dieter',
     boughtBy: ['8935b480'],
   },
   {
@@ -36,6 +39,7 @@ const products = [
     unit: Unit.LITER,
     price_per_unit: 3.50,
     producerId: 'da8ab4c0',
+    producerName: 'klaus-dieter',
   },
 ]
 

@@ -24,6 +24,7 @@ type Product @key(fields: "id"){
     unit: Unit!
     price_per_unit: Float!
     description: String
+    producer: Producer! @provides(fields: "username")
 }
 
 input ProductQueryInput {
@@ -47,5 +48,6 @@ enum Unit {
 
 extend type Producer @key(fields: "id") {
   id: ID! @external
-  products: [Product!]
+  username: String! @external
+  products: [Product!] @requires(fields: "username")
 }
