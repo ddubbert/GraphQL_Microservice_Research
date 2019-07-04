@@ -681,4 +681,4 @@ const gateway = new ApolloGateway({
 })()
 ```
 
-Nun ist das Gateway vollständig einsatzbereit. Werden neben diesen Queries und Mutations auch Subscriptions benötigt, welche Federation noch nicht unterstützt, so kann der Workaround aus diesem [Apollo Issue](https://github.com/apollographql/apollo-server/issues/2776) verfolgt werden.
+Nun ist das Gateway vollständig einsatzbereit. Werden neben diesen Queries und Mutations auch Subscriptions benötigt, welche Federation noch nicht unterstützt, so kann der Workaround aus diesem [Apollo Issue](https://github.com/apollographql/apollo-server/issues/2776#issuecomment-503361983) verfolgt werden.
