@@ -20,7 +20,7 @@
     "graphql-yoga": "1.17.4",
     "install": "0.12.2",
     "merge-graphql-schemas": "1.5.8",
-    "node-fetch": "2.6.0",
+    "node-fetch": "2.6.1",
     "nodemon": "1.17.5",
     "npm": "6.9.0",
     "subscriptions-transport-ws": "0.9.16",
