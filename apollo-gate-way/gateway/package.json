@@ -23,7 +23,7 @@
     "npm": "6.9.0",
     "subscriptions-transport-ws": "0.9.16",
     "uniqid": "5.0.3",
-    "ws": "7.0.0"
+    "ws": "7.4.6"
   },
   "devDependencies": {
     "eslint": "5.16.0",
